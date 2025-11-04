@@ -1,0 +1,380 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}صفحه اصلی | آکسون نگار{% endblock %}
+
+{% block content %}
+    <!--===== HERO AREA START =======-->
+    <div class="hero-area6">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <div class="main-heading">
+              <span class="span" data-aos="fade-right" data-aos-duration="700">
+                <img alt="" src="{% static 'img/icons/main-span6.png' %}"/>
+                آینده تعامل با هوش مصنوعی همین‌جاست
+              </span>
+
+              <h1 class="text-anime-style-3">
+                آکسون‌نگار، دستیار هوش مصنوعی همه‌کاره شما
+              </h1>
+
+              <div class="space16"></div>
+
+              <p data-aos="fade-left" data-aos-duration="700">
+                با آکسون‌نگار، از قدرت هوش مصنوعی برای گفتگو، تولید محتوا، خلاصه‌سازی، طراحی تصویر
+                و ده ها کاربرد دیگر بهره‌مند شوید.
+                همه چیز در یک پلتفرم هوشمند و فارسی‌زبان.
+              </p>
+
+              <div class="space30"></div>
+
+              <div class="buttons" data-aos="fade-left" data-aos-duration="900">
+                <a class="theme-btn8" href="#">
+                  <span class="tb8">
+                    نسخه PWA رو تست کن
+                    <span class="arrow">
+                      <i class="fa-solid fa-arrow-left"></i>
+                    </span>
+                  </span>
+                </a>
+
+                <div class="video-action-btn1 popup-youtube">
+                  <div class="">
+                    <a class="video-play-button play-btn" href="https://www.youtube.com/watch?v=Y8XpQpW5OVY" id="play-video">
+                      <span></span>
+                    </a>
+                  </div>
+                  <div class="video-btn-pera">
+                    <p>معرفی آکسون‌نگار</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="images-all" data-aos="zoom-out" data-aos-duration="800">
+              <div class="image1">
+                <img alt="آکسون نگار - تصویر اصلی" src="{% static 'img/hero/AIMode-Desktop.jpg' %}"/>
+              </div>
+              <div class="image2 animate1">
+                <img alt="آکسون نگار - تصویر دوم" src="{% static 'img/hero/Memory-Gallery.png' %}"/>
+              </div>
+              <div class="image3 shape-animaiton2">
+                <img alt="آکسون نگار - تصویر سوم" src="{% static 'img/hero/Memory-Gallery.png' %}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== HERO AREA END =======-->
+
+    <!--===== COUNTERS AREA START =======-->
+    <div class="counters6 sp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 m-auto text-center">
+            <div class="heading6">
+              <h3 class="text-anime-style-3">
+                آمارهایی که قدرت آکسون‌نگار را نشان می‌دهند
+              </h3>
+              <p class="mt-2">
+                از کاربران فعال تا پاسخ‌گویی لحظه‌ای — همه چیز برای تجربه‌ای سریع، دقیق و هوشمند.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space30"></div>
+
+        <div class="row">
+          <!-- Counter 1 -->
+          <div class="col-lg-3 col-6">
+            <div class="counter-box box1" data-aos="zoom-out" data-aos-duration="700">
+              <h2>
+                <span class="counter">۴</span>+
+              </h2>
+              <p>پلتفرم های در دسترس</p>
+            </div>
+          </div>
+
+          <!-- Counter 2 -->
+          <div class="col-lg-3 col-6">
+            <div class="counter-box box2" data-aos="zoom-out" data-aos-duration="900">
+              <h2>
+                <span class="counter">۲۵</span>+
+              </h2>
+              <p>مودهای هوش مصنوعی</p>
+            </div>
+          </div>
+
+          <!-- Counter 3 -->
+          <div class="col-lg-3 col-6">
+            <div class="counter-box box3" data-aos="zoom-out" data-aos-duration="1100">
+              <h2>
+                <span class="counter">۵۰</span>+
+              </h2>
+              <p>پرامپت پکت‌ها</p>
+            </div>
+          </div>
+
+          <!-- Counter 4 -->
+          <div class="col-lg-3 col-6">
+            <div class="counter-box box4" data-aos="zoom-out" data-aos-duration="1200">
+              <h2>
+                <span class="counter">۲۰</span> ثانیه
+              </h2>
+              <p>میانگین زمان پاسخ‌گویی هوش مصنوعی</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== COUNTERS AREA END =======-->
+
+    <!--===== EDITING AREA START =======-->
+    <div class="editing6 sp">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 m-auto text-center">
+        <div class="heading6">
+          <span class="title">
+            <img alt="" src="{% static 'img/icons/span-image6.png' %}" />
+          </span>
+          <h2 class="text-anime-style-3">
+            مجموعه‌ای قدرتمند از ابزارهای هوش مصنوعی در آکسون‌نگار
+          </h2>
+          <p class="mt-2">
+            هر ابزار، برای هدفی طراحی شده است؛ از چت هوشمند تا تولید متن، تصویر و تحلیل داده — همه در یک پلتفرم.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space30"></div>
+
+    <div class="row">
+        {% for use_case in use_cases %}
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in-up" data-aos-duration="1200">
+                <div class="editing-box">
+                  <div class="icon">
+                    <img alt="" src={{ use_case.icon.url }} />
+                  </div>
+                  <div class="space16"></div>
+                  <div class="heading6">
+                    <h4><a>{{ use_case.title }}</a></h4>
+                    <div class="space16"></div>
+                    <p>
+                      {{ use_case.description }}
+                    </p>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!--===== EDITING AREA END =======-->
+
+    <!--===== FEATURES AREA START =======-->
+    <div class="features6 sp">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 m-auto text-center">
+        <div class="heading6">
+          <span class="title">
+            <img alt="" src="{% static 'img/icons/span-image6.png' %}"/>
+          </span>
+          <h2 class="text-anime-style-3">ویژگی‌های هوشمند آکسون‌نگار</h2>
+        </div>
+      </div>
+    </div>
+
+    {% for feature in features %}
+    <div class="row align-items-center {% if forloop.counter|divisibleby:2 %}flex-row-reverse{% endif %}">
+      <div class="col-lg-6">
+        <div class="main-image left60" data-aos="zoom-out" data-aos-duration="800">
+          <img alt="{{ feature.title }}" src="{{ feature.image.url }}"/>
+        </div>
+      </div>
+
+      <div class="col-1"></div>
+
+      <div class="col-lg-5">
+        <div class="heading6 features-heading">
+          <span class="span3" data-aos="fade-right" data-aos-duration="700">{{ feature.subtitle }}</span>
+          <h3 class="text-anime-style-3">{{ feature.title }}</h3>
+          <div class="space16"></div>
+          <p data-aos="fade-right" data-aos-duration="900">{{ feature.description }}</p>
+          <div class="space30"></div>
+          {% if feature.link_url %}
+          <a class="theme-btn9" href="{{ feature.link_url }}">
+            <span class="tb8">
+              {{ feature.link_text }}
+              <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </span>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+    <!--===== FEATURES AREA END =======-->
+
+    <!--===== BRANDS AREA START =======-->
+    <div class="brands-area6 sp">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <div class="heading6-w">
+              <span class="span2" data-aos="fade-right" data-aos-duration="700">
+                حالت‌های هوشمند آکسون‌نگار
+              </span>
+              <h2 class="text-anime-style-3">
+                از متن تا تصویر، از داده تا گفتگو — همه در یک پلتفرم
+              </h2>
+              <div class="space16"></div>
+              <p data-aos="fade-right" data-aos-duration="900">
+                آکسون‌نگار مجموعه‌ای از حالت‌های هوش مصنوعی را در اختیار شما قرار می‌دهد تا به سادگی بین انواع داده جابه‌جا شوید.
+                از تولید تصویر از متن گرفته تا استخراج اطلاعات از عکس، تبدیل فایل‌های اکسل به گزارش متنی،
+                یا حتی ساخت خودکار نوت‌بوک‌های Jupyter از متن — همه چیز فقط با یک کلیک انجام می‌شود.
+              </p>
+              <div class="space16"></div>
+              <p data-aos="fade-right" data-aos-duration="1000">
+                هر حالت هوشمند با تنظیمات پیشرفته مثل انتخاب مدل (GPT، Gemini و ...) و کنترل‌هایی مانند جستجوی وب،
+                <span class="highlight">Top-P</span>، و دمای پاسخ قابل سفارشی‌سازی است.
+                آکسون‌نگار دقیقاً همان تجربه‌ای را ارائه می‌دهد که شما انتظار دارید.
+              </p>
+              <div class="space30"></div>
+              <div data-aos="fade-right" data-aos-duration="1100">
+                <a class="theme-btn8" href="٫">
+                  <span class="tb8">
+                    امتحانش کن، خیلی از بخشاش رایگانه!
+                    <span class="arrow">
+                      <i class="fa-solid fa-arrow-left"></i>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-1"></div>
+
+          <div class="col-lg-6">
+            <div class="apps-images" data-aos="zoom-in" data-aos-duration="1000">
+              <div class="image1">
+                <img alt="" src="{% static 'img/bg/apps5-shape-bg.png' %}" />
+                <div class="dot"></div>
+              </div>
+              <div class="image2">
+                <img alt="" src="{% static 'img/others/apps5.png' %}" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== BRANDS AREA END =======-->
+
+    <!--===== FAQ AREA START =======-->
+    <div class="faq6 sp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 m-auto text-center">
+            <div class="heading6">
+              <span class="span">سؤالات متداول</span>
+              <h2 class="text-anime-style-3">پرسش‌های پرتکرار درباره آکسون‌نگار</h2>
+            </div>
+            <div class="space40"></div>
+
+            <div class="accordion accordion1" id="accordionExample">
+              {% for faq in faqs %}
+              <div class="accordion-item {% if forloop.first %}active{% endif %}" data-aos="fade-up" data-aos-duration="{{ 700|add:forloop.counter0|mul:100 }}">
+                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                  <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse{{ forloop.counter }}"
+                          aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                          aria-controls="collapse{{ forloop.counter }}">
+                    {{ faq.question }}
+                  </button>
+                </h2>
+
+                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                     aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    {{ faq.answer|linebreaks }}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="space30"></div>
+            <div data-aos="fade-right" data-aos-duration="1100">
+            <a class="theme-btn8" href="٫">
+              <span class="tb8">
+                جواب سوالتو پیدا نکردی؟‌ لیست سوالات رو از اینجا ببین!
+                <span class="arrow">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </span>
+              </span>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== FAQ AREA END =======-->
+
+    <!--===== CTA AREA START =======-->
+    <div class="cta6">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <div class="heading6-w">
+              <span class="span">
+                شروع هوشمندانه با آکسون‌نگار
+              </span>
+              <h2>
+                گفتگو، تولید محتوا و خلاقیت<br/>
+                همه در یک پلتفرم هوش مصنوعی
+              </h2>
+              <div class="space16"></div>
+              <p>
+                از هوش مصنوعی چندزبانه تا پرامپت‌پک‌های تخصصی و مدل‌های قابل‌تغییر —
+                آکسون‌نگار همه ابزارهای هوش مصنوعی مورد نیازت را در یکجا به تو می‌دهد.
+              </p>
+              <div class="space30"></div>
+              <a class="theme-btn8" href="#">
+                <span class="tb8">
+                    یه نگاهی به لیست برنامه هامون بنداز!
+                  <span class="arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-6">
+            <div class="cta6-images">
+              <div class="image1">
+                <img alt="" src="{% static 'img/others/cta6-img.png' %}"/>
+              </div>
+              <div class="image2">
+                <img alt="" src="{% static 'img/shapes/cta6-shape.png' %}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--===== CTA AREA END =======-->
+
+{% endblock %}

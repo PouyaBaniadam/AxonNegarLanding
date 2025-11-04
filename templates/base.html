@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}آکسون نگار{% endblock %}</title>
+    {% include 'includes/headings.html' %}
+  </head>
+  <body class="body">
+
+    {% include 'includes/scroll_progress.html' %}
+    {% include 'includes/preloader.html' %}
+    {% include 'includes/desktop_header.html' %}
+    {% include 'includes/mobile_header.html' %}
+
+    {% block content %}{% endblock %}
+
+    {% include 'includes/footer.html' %}
+    {% include 'includes/scripts.html' %}
+  </body>
+</html>
