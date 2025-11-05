@@ -1,0 +1,1524 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   جزئیات وبلاگ
+  </title>
+  <!--=====FAB ICON=======-->
+  <link href="{% static 'img/logo/titel1.png' %}" rel="shortcut icon" type="image/x-icon"/>
+  <!--=====CSS=======-->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/fontawesome.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/nice-select.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/slick-slider.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/aos.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/mobile-menu.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
+  <!--=====JQUERY=======-->
+  <script src="{% static 'js/jquery-3-7-1.min.js' %}">
+  </script>
+  <link charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.pgV-E-68K-A.L.W.O/am=gMA/d=0/rs=AN8SPfpszKJssl6IA0boGClFdsaAZGtXEQ/m=el_main_css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body class="body2 body">
+  <!--=====progress END=======-->
+  <div class="paginacontainer">
+   <div class="progress-wrap">
+    <svg class="progress-circle svg-content" height="100%" viewBox="-1 -1 102 102" width="100%">
+     <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98">
+     </path>
+    </svg>
+   </div>
+  </div>
+  <!--=====progress END=======-->
+  <div class="overlay flex cac vac preloader-parent">
+   <div>
+    <div class="loader preloader flex vac">
+     <svg height="200" width="200">
+      <circle class="background" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)">
+      </circle>
+      <circle class="outer" cx="90" cy="90" r="80" transform="rotate(-90, 100, 90)">
+      </circle>
+     </svg>
+     <span class="circle-background">
+     </span>
+     <span class="logo animated fade-in">
+      <img alt="" src="{% static 'img/logo/header-logo1.png' %}"/>
+     </span>
+    </div>
+   </div>
+  </div>
+  <!--=====HEADER START=======-->
+  <header>
+   <div class="header-area header-area2 header-area-all d-none d-lg-block" id="header">
+    <div class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="header-elements">
+        <div class="site-logo home1-site-logo">
+         <a href="index.html">
+          <img alt="" src="{% static 'img/logo/header-logo2.png' %}"/>
+         </a>
+        </div>
+        <div class="main-menu-ex main-menu-ex1">
+         <ul>
+          <li>
+           <a href="#">
+            خانه
+            <i class="fa-solid fa-angle-down">
+            </i>
+           </a>
+           <div class="tp-submenu">
+            <div class="row">
+             <div class="col-lg-12">
+              <div class="all-images-menu">
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo1.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index1.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index.html">
+                 01. سازنده صفحه وب
+                </a>
+               </div>
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo2.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index2.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index2.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index2.html">
+                 02. ردیاب زمان
+                </a>
+               </div>
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo3.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index3.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index3.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index3.html">
+                 ۰۳. نرم‌افزار POS
+                </a>
+               </div>
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo4.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index4.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index4.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index4.html">
+                 04. مدیریت رمز عبور
+                </a>
+               </div>
+               <div class="homemenu-thumb" style="margin: 0 0 20px 0;">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo5.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index5.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index5.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index5.html">
+                 ۰۵. نرم‌افزار منابع انسانی
+                </a>
+               </div>
+              </div>
+              <div class="all-images-menu">
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo6.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index6.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index6.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index6.html">
+                 ۶. بازاریابی ایمیلی
+                </a>
+               </div>
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo7.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index7.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index7.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index7.html">
+                 ۷. مدیریت پروژه
+                </a>
+               </div>
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo8.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index8.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index8.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index8.html">
+                 08. نرم افزار سئو
+                </a>
+               </div>
+               <div class="homemenu-thumb">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/demo9.jpg' %}"/>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="index9.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-index9.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="index9.html">
+                 09. رسانه‌های اجتماعی
+                </a>
+               </div>
+               <div class="homemenu-thumb" style="margin: 0 0 20px 0;">
+                <div class="img1">
+                 <img alt="" src="{% static 'img/demo/ltr.png' %}"/>
+                </div>
+                <div class="text">
+                 <h2>
+                  LTR
+                 </h2>
+                </div>
+                <div class="homemenu-btn">
+                 <a class="header-btn1" href="ltr.html">
+                  چند صفحه‌ای
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                 <div class="space16">
+                 </div>
+                 <a class="header-btn1" href="single-ltr.html" target="_blank">
+                  یک صفحه
+                  <i class="fa-solid fa-arrow-left">
+                  </i>
+                 </a>
+                </div>
+                <a class="bottom-heading" href="ltr.html">
+                 ۱۰. نسخه LTR
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </li>
+          <li>
+           <a href="about.html">
+            درباره ما
+           </a>
+          </li>
+          <li class="dropdown-menu-parrent">
+           <a href="#">
+            صفحات
+            <i class="fa-solid fa-angle-down">
+            </i>
+           </a>
+           <ul>
+            <li>
+             <a href="contact.html">
+              تماس با ما
+             </a>
+            </li>
+            <li>
+             <a href="features.html">
+              ویژگی‌ها
+             </a>
+            </li>
+            <li>
+             <a href="testimonial.html">
+              گواهی‌نامه
+             </a>
+            </li>
+            <li>
+             <a href="pricing.html">
+              قیمت‌گذاری
+             </a>
+            </li>
+            <li>
+             <a href="download.html">
+              دانلود
+             </a>
+            </li>
+            <li>
+             <a href="error.html">
+              ۴۰۴
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="dropdown-menu-parrent">
+           <a href="#">
+            وبلاگ
+            <i class="fa-solid fa-angle-down">
+            </i>
+           </a>
+           <ul>
+            <li>
+             <a href="blog.html">
+              وبلاگ
+             </a>
+            </li>
+            <li>
+             <a href="blog-details-sidebar-right.html">
+              جزئیات سمت راست
+             </a>
+            </li>
+            <li>
+             <a href="blog-details-sidebar-left.html">
+              جزئیات سمت چپ
+             </a>
+            </li>
+            <li>
+             <a href="blog-details.html">
+              جزئیات وبلاگ
+             </a>
+            </li>
+           </ul>
+          </li>
+          <li class="dropdown-menu-parrent">
+           <a href="#">
+            حساب کاربری
+            <i class="fa-solid fa-angle-down">
+            </i>
+           </a>
+           <ul>
+            <li>
+             <a href="account.html">
+              ایجاد حساب کاربری
+             </a>
+            </li>
+            <li>
+             <a href="login.html">
+              ورود
+             </a>
+            </li>
+            <li>
+             <a href="forgot.html">
+              فراموش شده
+             </a>
+            </li>
+            <li>
+             <a href="reset.html">
+              تنظیم مجدد
+             </a>
+            </li>
+            <li>
+             <a href="verify.html">
+              تأیید ایمیل
+             </a>
+            </li>
+            <li>
+             <a href="form-success.html">
+              موفقیت
+             </a>
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+        <div class="header2-buttons">
+         <a class="login-btn" href="login.html">
+          ورود
+         </a>
+         <a class="theme-btn2" href="account.html">
+          ثبت نام رایگان
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!--=====HEADER END=======-->
+  <!--=====Mobile header start=======-->
+  <div class="mobile-header d-block d-lg-none">
+   <div class="container-fluid">
+    <div class="col-12">
+     <div class="mobile-header-elements">
+      <div class="mobile-logo">
+       <a href="index1.html">
+        <img alt="" src="{% static 'img/logo/header-logo2.png' %}"/>
+       </a>
+      </div>
+      <div class="mobile-nav-icon">
+       <i class="fa-duotone fa-bars-staggered">
+       </i>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="mobile-sidebar d-block d-lg-none">
+   <div class="logo-m">
+    <a href="index.html">
+     <img alt="" src="{% static 'img/logo/header-logo1.png' %}"/>
+    </a>
+   </div>
+   <div class="menu-close">
+    <i class="fa-solid fa-xmark">
+    </i>
+   </div>
+   <div class="mobile-nav">
+    <ul>
+     <li class="has-dropdown">
+      <a href="#">
+       خانه
+      </a>
+      <ul class="sub-menu">
+       <li class="has-dropdown has-dropdown1">
+        <a href="index4.html">
+         چند صفحه‌ای
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="index.html">
+           خانه ۱
+          </a>
+         </li>
+         <li>
+          <a href="index2.html">
+           خانه ۲
+          </a>
+         </li>
+         <li>
+          <a href="index3.html">
+           خانه ۳
+          </a>
+         </li>
+         <li>
+          <a href="index4.html">
+           خانه ۴
+          </a>
+         </li>
+         <li>
+          <a href="index5.html">
+           خانه ۵
+          </a>
+         </li>
+         <li>
+          <a href="index6.html">
+           خانه ۶
+          </a>
+         </li>
+         <li>
+          <a href="index7.html">
+           خانه ۷
+          </a>
+         </li>
+         <li>
+          <a href="index8.html">
+           خانه ۸
+          </a>
+         </li>
+         <li>
+          <a href="index9.html">
+           خانه ۹
+          </a>
+         </li>
+         <li>
+          <a href="ltr.html">
+           چپ چین
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="has-dropdown has-dropdown1">
+        <a href="index4.html">
+         صفحه فرود
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="single-index1.html">
+           خانه ۱
+          </a>
+         </li>
+         <li>
+          <a href="single-index2.html">
+           خانه ۲
+          </a>
+         </li>
+         <li>
+          <a href="single-index3.html">
+           خانه ۳
+          </a>
+         </li>
+         <li>
+          <a href="single-index4.html">
+           خانه ۴
+          </a>
+         </li>
+         <li>
+          <a href="single-index5.html">
+           خانه ۵
+          </a>
+         </li>
+         <li>
+          <a href="single-index6.html">
+           خانه ۶
+          </a>
+         </li>
+         <li>
+          <a href="single-index7.html">
+           خانه ۷
+          </a>
+         </li>
+         <li>
+          <a href="single-index8.html">
+           خانه ۸
+          </a>
+         </li>
+         <li>
+          <a href="single-index9.html">
+           خانه ۹
+          </a>
+         </li>
+         <li>
+          <a href="single-ltr.html">
+           چپ چین
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="about.html">
+       درباره ما
+      </a>
+     </li>
+     <li class="has-dropdown">
+      <a href="#">
+       صفحات
+      </a>
+      <ul class="sub-menu">
+       <li>
+        <a href="contact.html">
+         تماس با ما
+        </a>
+       </li>
+       <li>
+        <a href="features.html">
+         ویژگی‌ها
+        </a>
+       </li>
+       <li>
+        <a href="testimonial.html">
+         گواهی‌نامه
+        </a>
+       </li>
+       <li>
+        <a href="pricing.html">
+         قیمت‌گذاری
+        </a>
+       </li>
+       <li>
+        <a href="download.html">
+         دانلود
+        </a>
+       </li>
+       <li>
+        <a href="error.html">
+         ۴۰۴
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="has-dropdown">
+      <a href="#">
+       وبلاگ
+      </a>
+      <ul class="sub-menu">
+       <li>
+        <a href="blog.html">
+         وبلاگ
+        </a>
+       </li>
+       <li>
+        <a href="blog-details-sidebar-right.html">
+         جزئیات سمت راست
+        </a>
+       </li>
+       <li>
+        <a href="blog-details-sidebar-left.html">
+         جزئیات سمت چپ
+        </a>
+       </li>
+       <li>
+        <a href="blog-details.html">
+         جزئیات وبلاگ
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="has-dropdown">
+      <a href="#">
+       حساب کاربری
+      </a>
+      <ul class="sub-menu">
+       <li>
+        <a href="account.html">
+         ایجاد حساب کاربری
+        </a>
+       </li>
+       <li>
+        <a href="login.html">
+         ورود
+        </a>
+       </li>
+       <li>
+        <a href="forgot.html">
+         فراموش شده
+        </a>
+       </li>
+       <li>
+        <a href="reset.html">
+         تنظیم مجدد
+        </a>
+       </li>
+       <li>
+        <a href="verify.html">
+         تأیید ایمیل
+        </a>
+       </li>
+       <li>
+        <a href="form-success.html">
+         موفقیت
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+    <a class="theme-btn3" href="account.html">
+     ثبت نام رایگان
+    </a>
+    <div class="contact-infos">
+     <h3>
+      اطلاعات تماس
+     </h3>
+     <div class="box">
+      <div class="icon">
+       <span>
+        <i class="fa-regular fa-phone">
+        </i>
+       </span>
+      </div>
+      <div class="pera">
+       <a href="tel:921-888-0022">
+        ۹۲۱-۸۸۸-۰۰۲۲
+       </a>
+      </div>
+     </div>
+     <div class="box">
+      <div class="icon">
+       <span>
+        <i class="fa-regular fa-envelope">
+        </i>
+       </span>
+      </div>
+      <div class="pera">
+       <a href="mailto:example@visafast.com">
+        example@visafast.com
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="contact-infos">
+     <h3>
+      موقعیت مکانی ما
+     </h3>
+     <div class="box">
+      <div class="icon">
+       <span>
+        <i class="fa-regular fa-location-dot">
+        </i>
+       </span>
+      </div>
+      <div class="pera">
+       <a href="#">
+        ۵۵ خیابان ایست بیرچوود، بروکلین،
+        <br/>
+        نیویورک، کد پستی ۱۱۲۰۱، ایالات متحده
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="contact-infos">
+     <h3>
+      موقعیت مکانی ما
+     </h3>
+     <ul class="icon-list">
+      <li>
+       <a href="#">
+        <i class="fa-brands fa-linkedin-in">
+        </i>
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fa-brands fa-x-twitter">
+        </i>
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fa-brands fa-youtube">
+        </i>
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fa-brands fa-instagram">
+        </i>
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+  <!--=====Mobile header end=======-->
+  <!--===== HERO AREA START =======-->
+  <div class="pages-hero pages-hero-unic">
+   <div class="container">
+    <div class="row align-items-center">
+     <div class="col-lg-7">
+      <div class="main-headding">
+       <h1>
+        راهنمای جامع کمپین ایمیلی
+       </h1>
+       <p>
+        جایی که بازاریابی ایمیلی با نوآوری تلاقی می‌کند. با کمپین‌های عمومی خداحافظی کنید و به ایمیل‌های شخصی‌سازی‌شده و با نرخ تبدیل بالا که با مخاطبان شما ارتباط برقرار می‌کنند، سلام کنید.
+       </p>
+       <div class="space30">
+       </div>
+       <div class="all-text-hero">
+        <div class="autor-area">
+         <div class="image">
+          <img alt="" src="{% static 'img/blog/blog-page-smoll-img.png' %}"/>
+         </div>
+         <div class="headding">
+          <h5>
+           <a href="#">
+            جانسون برانس
+           </a>
+          </h5>
+          <p>
+           طراح رابط کاربری/تجربه کاربری
+          </p>
+         </div>
+        </div>
+        <div class="tag">
+         <a href="#">
+          #ایمیل مارکتینگ
+         </a>
+        </div>
+        <div class="date">
+         <a href="#">
+          <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
+          ۱۰ خرداد 1404
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-5">
+      <div class="hero-image shape-animaiton3">
+       <img alt="" src="{% static 'img/about/about-main-img.png' %}"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <img alt="" class="hero-shape1" src="{% static 'img/shapes/common-hero-shape1.png' %}"/>
+   <img alt="" class="hero-shape3" src="{% static 'img/shapes/common-hero-shape3.png' %}"/>
+  </div>
+  <!--===== HERO AREA END =======-->
+  <div class="space60">
+  </div>
+  <!--===== SIDEBAR AREA START =======-->
+  <div class="blog-details-sidebar">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-8 m-auto">
+      <div class="blog-details-all pr60">
+       <article>
+        <div class="details-box">
+         <div class="image">
+          <img alt="" src="{% static 'img/blog/blog-details-img1.png' %}"/>
+         </div>
+         <div class="space20">
+         </div>
+         <div class="all-tags">
+          <a class="tag" href="#">
+           #ایمیل مارکتینگ
+          </a>
+          <a href="#">
+           <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
+           ۱۰ خرداد 1404
+          </a>
+          <a href="#">
+           <img alt="" src="{% static 'img/icons/comment.png' %}"/>
+           ۱۰ خرداد 1404
+          </a>
+         </div>
+         <div class="space10">
+         </div>
+         <div class="headding2">
+          <h2>
+           بهترین بازاریابی ایمیلی استادانه از اینجا شروع می‌شود: معرفی ای‌سافت
+          </h2>
+          <div class="space16">
+          </div>
+          <p>
+           بازاریابی ایمیلی، جایی که نبوغ با نوآوری ترکیب می‌شود. در ای‌سافت، ما در ماموریتی هستیم تا نحوه ارتباط شما با مخاطبانتان را متحول کنیم. با ویرایشگر بصری کشیدن و رها کردن ما، قدرت کمپین‌های شخصی‌سازی‌شده و با نرخ تبدیل بالا را آزاد کنید.
+          </p>
+          <div class="space16">
+          </div>
+          <p>
+           با ویرایشگر بصری کشیدن و رها کردن، تقسیم‌بندی هوشمند و ابزارهای اتوماسیون قدرتمند ما، قدرت کمپین‌های شخصی‌سازی‌شده و با نرخ تبدیل بالا را آزاد کنید. ساخت ایمیل‌هایی که طنین‌انداز شوند، هرگز آسان‌تر از این نبوده است. به بهترین جامعه بازاریابان بپیوندید.
+          </p>
+         </div>
+         <div class="space40">
+         </div>
+         <div class="blog-border">
+         </div>
+         <div class="space40">
+         </div>
+        </div>
+       </article>
+       <article>
+        <div class="details-box">
+         <div class="row">
+          <div class="col-lg-6">
+           <div class="image">
+            <img alt="" src="{% static 'img/blog/blog-detials-img2.png' %}"/>
+           </div>
+          </div>
+          <div class="col-lg-6">
+           <div class="image">
+            <img alt="" src="{% static 'img/blog/blog-detials-img2.png' %}"/>
+           </div>
+          </div>
+         </div>
+         <div class="space30">
+         </div>
+         <div class="headding2">
+          <h5>
+           ایجاد موفقیت: درخشش ایمیل مارکتینگ شما شکوفا شد: راهکار Elevate - ای‌سافت
+          </h5>
+          <div class="space16">
+          </div>
+          <p>
+           ای‌سافت برای کسب و کارهای کوچک یا بزرگ، طرحی متناسب با نیازهای شما دارد. انقلاب بازاریابی ایمیلی را از دست ندهید - همین امروز برای یک دوره آزمایشی رایگان ثبت نام کنید و جادوی نام SaaS خود را تجربه کنید. تعامل، تبدیل، موفقیت - سفر شما از اینجا آغاز می‌شود.
+          </p>
+          <div class="space10">
+          </div>
+          <div class="row">
+           <div class="col-lg-6">
+            <ul class="text-list">
+             <li>
+              <span>
+               <i class="fa-solid fa-check">
+               </i>
+              </span>
+              افزایش ترافیک ارگانیک
+             </li>
+             <li>
+              <span>
+               <i class="fa-solid fa-check">
+               </i>
+              </span>
+              داشبورد تحلیلی عمیق
+             </li>
+             <li>
+              <span>
+               <i class="fa-solid fa-check">
+               </i>
+              </span>
+              ابزارهای بهینه‌سازی محتوا
+             </li>
+            </ul>
+           </div>
+           <div class="col-lg-6">
+            <ul class="text-list">
+             <li>
+              <span>
+               <i class="fa-solid fa-check">
+               </i>
+              </span>
+              نظارت منظم بر عملکرد
+             </li>
+             <li>
+              <span>
+               <i class="fa-solid fa-check">
+               </i>
+              </span>
+              طراحی واکنش‌گرا برای هر دستگاهی
+             </li>
+             <li>
+              <span>
+               <i class="fa-solid fa-check">
+               </i>
+              </span>
+              رتبه‌بندی بهبود یافته در موتورهای جستجو
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+         <div class="space40">
+         </div>
+         <div class="blog-border">
+         </div>
+         <div class="space40">
+         </div>
+        </div>
+       </article>
+       <article>
+        <div class="details-box">
+         <div class="headding2">
+          <h5>
+           فراتر از صندوق ورودی: بازاریابی، کارایی ایمیل را از نو تعریف می‌کند و با استراتژی‌های نوآوری همراه می‌شود
+          </h5>
+          <div class="space16">
+          </div>
+          <p>
+           پلتفرم ما فراتر از صندوق ورودی ایمیل عمل می‌کند و تجربه‌ای یکپارچه و کارآمد ارائه می‌دهد. با داشبورد تحلیلی ما، شاهد اجرای کمپین‌های خود باشید که بینش‌های مبتنی بر داده را برای تصمیم‌گیری‌های آگاهانه ارائه می‌دهد. چه یک استارتاپ باشید و چه یک کسب‌وکار کوچک.
+          </p>
+         </div>
+         <div class="comment-area">
+          <p>
+           «ای‌سافت با تبدیل چیزهای معمولی به خارق‌العاده، چیزی بیش از یک پلتفرم بازاریابی ایمیلی است؛ این پلتفرم دروازه شما به سوی ارتباطات تأثیرگذار است. به راحتی ایمیل‌ها را ایجاد، هدف‌گذاری، خودکارسازی و تجزیه و تحلیل کنید و از طنین‌انداز شدن هر ایمیل اطمینان حاصل کنید.»
+          </p>
+          <img alt="" class="icon" src="{% static 'img/icons/details-comment.png' %}"/>
+         </div>
+         <div class="headding2">
+          <h5>
+           موفقیت در بازاریابی ایمیلی: درخشش ایمیل شما، راهکار Elevate را آزاد کرد - ای‌سافت
+          </h5>
+          <div class="space16">
+          </div>
+          <p>
+           ای‌سافت برای کسب و کارهای کوچک یا بزرگ، طرحی متناسب با نیازهای شما دارد. انقلاب بازاریابی ایمیلی را از دست ندهید - همین امروز برای یک دوره آزمایشی رایگان ثبت نام کنید و جادوی نام SaaS خود را تجربه کنید. تعامل، تبدیل، موفقیت - سفر شما از اینجا آغاز می‌شود.
+          </p>
+         </div>
+         <div class="space40">
+         </div>
+         <div class="blog-border">
+         </div>
+         <div class="space20">
+         </div>
+        </div>
+       </article>
+       <div class="social-area-all">
+        <div class="tags">
+         <a class="tag" href="#">
+          #ایمیل_مارکتینگ
+         </a>
+         <a class="date" href="#">
+          <img alt="" src="{% static 'img/icons/comment.png' %}"/>
+          ۱۰ خرداد 1404
+         </a>
+        </div>
+        <div class="social-icons">
+         <ul>
+          <li class="text">
+           اشتراک گذاری:
+          </li>
+          <li>
+           <a href="#">
+            <i class="fa-brands fa-facebook-f">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="fa-brands fa-google-plus-g">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="fa-brands fa-linkedin-in">
+            </i>
+           </a>
+          </li>
+          <li>
+           <a href="#">
+            <i class="fa-brands fa-youtube">
+            </i>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="space20">
+       </div>
+       <div class="qustion-box">
+        <div class="image">
+         <img alt="" src="{% static 'img/icons/massanger.png' %}"/>
+        </div>
+        <div class="pera">
+         <p>
+          سوالات؟ نظرات؟ برای پشتیبانی به
+          <a href="#">
+           مرکز راهنمایی ما مراجعه کنید
+          </a>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--===== SIDEBAR AREA END =======-->
+  <!--===== BLOG AREA START =======-->
+  <div class="blog2 sp">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-6 m-auto text-center">
+      <div class="headding2">
+       <h2>
+        آخرین وبلاگ و اخبار ما
+       </h2>
+       <div class="space16">
+       </div>
+       <p>
+        صفحات فرود پویای ما تجربیات کاربری را از نو تعریف می‌کنند، ای‌سافت تضمین می‌کند که هر کلیک مهم است، و به دنیای بینش‌ها قدم بگذارید.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="space30">
+    </div>
+    <div class="row">
+     <div class="col-lg-6">
+      <div class="blog-box">
+       <div class="image">
+        <img alt="" src="{% static 'img/blog/blog2-img1.png' %}"/>
+       </div>
+       <div class="headding">
+        <div class="tags">
+         <a href="#">
+          <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
+          ۱۰ خرداد 1404
+         </a>
+         <a href="#">
+          <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>
+          خاخام محمود
+         </a>
+        </div>
+        <h4>
+         <a href="blog-details.html">
+          راهنمای جامع کمپین ایمیلی
+         </a>
+        </h4>
+        <p>
+         به راحتی ایمیل‌های خیره‌کننده طراحی کنید، گردش کار بازاریابی خود را خودکار کنید و مخاطبان خود را با دقت و حداکثر هدف قرار دهید.
+        </p>
+        <a class="learn" href="blog-details.html">
+         ادامه مطلب
+         <span>
+          <i class="fa-regular fa-arrow-left">
+          </i>
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-6">
+      <div class="blog-box">
+       <div class="image">
+        <img alt="" src="{% static 'img/blog/blog2-img2.png' %}"/>
+       </div>
+       <div class="headding">
+        <div class="tags">
+         <a href="#">
+          <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
+          ۱۰ خرداد 1404
+         </a>
+         <a href="#">
+          <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>
+          خاخام محمود
+         </a>
+        </div>
+        <h4>
+         <a href="blog-details.html">
+          طراحی ایمیل: نگاهی عمیق به تأثیر بصری
+         </a>
+        </h4>
+        <p>
+         به راحتی ایمیل‌های خیره‌کننده طراحی کنید، گردش کار بازاریابی خود را خودکار کنید و مخاطبان خود را با دقت و حداکثر هدف قرار دهید.
+        </p>
+        <a class="learn" href="blog-details.html">
+         ادامه مطلب
+         <span>
+          <i class="fa-regular fa-arrow-left">
+          </i>
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--===== BLOG AREA END =======-->
+  <!--===== CTA AREA END =======-->
+  <div class="cta2-area" style="background-image: url(assets/img/bg/cta2-bg.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-6 m-auto text-center">
+      <div class="headding2-w">
+       <h2>
+        به بیش از ۵۰۰۰۰۰ سئوکار بپیوندید که به ای‌سافت برای بینش‌هایی که به رشد کسب و کارشان کمک می‌کند، اعتماد دارند.
+       </h2>
+       <div class="space16">
+       </div>
+       <p>
+        ای‌سافت از هر نظر فراتر از انتظارات ما عمل کرده است. سهولت و سهولتی که می‌توانیم با آن بخش‌های خاصی از مخاطبان را هدف قرار دهیم، متحول شده است.
+       </p>
+       <div class="space30">
+       </div>
+       <div class="">
+        <a class="theme-btn3" href="account.html">
+         ثبت نام رایگان
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--===== CTA AREA END =======-->
+  <!--===== CTA IMAGE AREA START =======-->
+  <div class="cta2-main-image">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="cta2-images">
+       <div class="img1">
+        <img alt="" src="{% static 'img/others/cta2-main-img.png' %}"/>
+       </div>
+       <div class="shape1">
+        <img alt="" src="{% static 'img/shapes/cta2-shape2.png' %}"/>
+       </div>
+       <div class="shape2">
+        <img alt="" src="{% static 'img/shapes/cta2-shape1.png' %}"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--===== CTA IMAGE AREA END =======-->
+  <!--===== FOOTER AREA START =======-->
+  <div class="footer2 _relative">
+   <div class="container">
+    <div class="rwo">
+     <div class="footer-icon-box-all">
+      <div class="footer-icon-box">
+       <div class="icon">
+        <img alt="" src="{% static 'img/icons/footer-icon1.png' %}"/>
+       </div>
+       <div class="headding">
+        <p>
+         آموزش رایگان و پشتیبانی ۲۴ ساعته
+        </p>
+       </div>
+      </div>
+      <div class="footer-icon-box">
+       <div class="icon">
+        <img alt="" src="{% static 'img/icons/footer-icon2.png' %}"/>
+       </div>
+       <div class="headding">
+        <p>
+         جدی در مورد امنیت و حریم خصوصی
+        </p>
+       </div>
+      </div>
+      <div class="footer-icon-box">
+       <div class="icon">
+        <img alt="" src="{% static 'img/icons/footer-icon3.png' %}"/>
+       </div>
+       <div class="headding">
+        <p>
+         بالاترین سطح آپتایم در ۱۲ ماه گذشته
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="space50">
+    </div>
+    <div class="row">
+     <div class="col-lg col-md-6 col-12">
+      <div class="single-footer-items">
+       <h3>
+        محصول
+       </h3>
+       <ul class="menu-list">
+        <li>
+         <a href="#">
+          قیمت‌گذاری
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          ادغام
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          ویژگی‌ها
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          قالب‌ها
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          تغییرات
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="col-lg col-md-6 col-12">
+      <div class="single-footer-items">
+       <h3>
+        پشتیبانی
+       </h3>
+       <ul class="menu-list">
+        <li>
+         <a href="#">
+          سوار شدن به هواپیما
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          مرکز راهنما
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          تماس با ما
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          کارشناسان
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          وضعیت
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="col-lg col-md-6 col-12">
+      <div class="single-footer-items">
+       <h3>
+        منابع
+       </h3>
+       <ul class="menu-list">
+        <li>
+         <a href="#">
+          جامعه
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          شرکت‌های وابسته
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          مشارکت‌ها
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          مزایا و امتیازات
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          اسناد API
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="col-lg col-md-6 col-12">
+      <div class="single-footer-items">
+       <h3>
+        شرکت
+       </h3>
+       <ul class="menu-list">
+        <li>
+         <a href="#">
+          درباره ما
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          وبلاگ ما
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          در مطبوعات
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          دارایی‌های برند
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          با ما همکاری کنید
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="col-lg col-md-6 col-12">
+      <div class="single-footer-items">
+       <h3>
+        دانلود
+       </h3>
+       <ul class="menu-list">
+        <li>
+         <a href="#">
+          آیفون و آیپد
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          اندروید
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          مک او اس
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          پنجره
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="col-lg-3 col-md-6 col-12">
+      <div class="single-footer-items">
+       <h3>
+        لینک‌های اجتماعی
+       </h3>
+       <ul class="social-icons">
+        <li>
+         <a href="#">
+          <i class="fa-brands fa-linkedin-in">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          <i class="fa-brands fa-x-twitter">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          <i class="fa-brands fa-youtube">
+          </i>
+         </a>
+        </li>
+        <li>
+         <a href="#">
+          <i class="fa-brands fa-instagram">
+          </i>
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="space40">
+    </div>
+    <div class="copyright-area">
+     <div class="row align-items-center">
+      <div class="col-md-5">
+       <div class="logo">
+        <a href="index.html">
+         <img alt="" src="{% static 'img/logo/header-logo2.png' %}"/>
+        </a>
+       </div>
+      </div>
+      <div class="col-md-7">
+       <div class="coppyleft text-left">
+        <a href="#">
+         @1404 ای‌سافت
+        </a>
+        <a href="#">امنیت</a>
+        <a href="#">
+         حریم خصوصی شما
+        </a>
+        <a href="#">
+         شرایط و ضوابط
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <img alt="" class="footer-shape" src="{% static 'img/shapes/footer2-shape.png' %}"/>
+   <img alt="" class="footer-shape2" src="{% static 'img/shapes/footer2-shape2.png' %}"/>
+  </div>
+  <!--===== FOOTER AREA END =======-->
+  <script src="{% static 'js/bootstrap.min.js' %}">
+  </script>
+  <script src="{% static 'js/aos.js' %}">
+  </script>
+  <script src="{% static 'js/fontawesome.js' %}">
+  </script>
+  <script src="{% static 'js/jquery.countup.js' %}">
+  </script>
+  <script src="{% static 'js/mobile-menu.js' %}">
+  </script>
+  <script src="{% static 'js/jquery.magnific-popup.js' %}">
+  </script>
+  <script src="{% static 'js/owl.carousel.min.js' %}">
+  </script>
+  <script src="{% static 'js/slick-slider.js' %}">
+  </script>
+  <script src="{% static 'js/gsap.min.js' %}">
+  </script>
+  <script src="{% static 'js/ScrollTrigger.min.js' %}">
+  </script>
+  <script src="{% static 'js/Splitetext.js' %}">
+  </script>
+  <script src="{% static 'js/text-animation.js' %}">
+  </script>
+  <script src="{% static 'js/SmoothScroll.js' %}">
+  </script>
+  <script src="{% static 'js/tilt.jquery.js' %}">
+  </script>
+  <script src="{% static 'js/main.js' %}">
+  </script>
+ </body>
+</html>

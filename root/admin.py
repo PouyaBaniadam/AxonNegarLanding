@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from home.models import UseCase, Feature, FAQ
+from root.models import UseCase, Feature, FAQ
 
 
 @admin.register(UseCase)

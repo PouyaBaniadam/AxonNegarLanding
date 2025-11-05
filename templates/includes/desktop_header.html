@@ -1,14 +1,22 @@
 {% load static %}
 
 <header>
-   <div class="header-area header-area6 header-area-all d-none d-lg-block" id="header">
+    {% if request.path == '/' %}
+        <div class="header-area header-area6 header-area-all d-none d-lg-block" id="header">
+    {% else %}
+        <div class="header-area header-area2 header-area-all d-none d-lg-block" id="header">
+    {% endif %}
     <div class="container">
      <div class="row">
       <div class="col-12">
        <div class="header-elements">
         <div class="site-logo home1-site-logo">
-         <a href="index.html">
-          <img alt="" src="{% static 'img/logo/header-logo6.png' %}"/>
+         <a href="{% url 'root:root' %}">
+        {% if request.path == '/' %}
+            <img alt="" src="{% static 'img/logo/header-logo6.png' %}"/>
+        {% else %}
+            <img alt="" src="{% static 'img/logo/header-logo2.png' %}"/>
+        {% endif %}
          </a>
         </div>
         <div class="main-menu-ex main-menu-ex1">
@@ -18,6 +26,7 @@
             درباره ما
            </a>
           </li>
+
           <li class="dropdown-menu-parrent">
            <a href="#">
             صفحات
@@ -57,35 +66,19 @@
             </li>
            </ul>
           </li>
-          <li class="dropdown-menu-parrent">
-           <a href="#">
+
+          <li>
+           <a href="{% url 'root:weblog-list' %}">
             وبلاگ
-            <i class="fa-solid fa-angle-down">
-            </i>
            </a>
-           <ul>
-            <li>
-             <a href="blog.html">
-              وبلاگ
-             </a>
-            </li>
-            <li>
-             <a href="blog-details-sidebar-right.html">
-              جزئیات سمت راست
-             </a>
-            </li>
-            <li>
-             <a href="blog-details-sidebar-left.html">
-              جزئیات سمت چپ
-             </a>
-            </li>
-            <li>
-             <a href="blog-details.html">
-              جزئیات وبلاگ
-             </a>
-            </li>
-           </ul>
           </li>
+
+          <li>
+           <a href="{% url 'root:faq-list' %}">
+            سوالات متداول
+           </a>
+          </li>
+
          </ul>
         </div>
         <div class="header4-buttons">

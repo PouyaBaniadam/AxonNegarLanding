@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}سؤالات متداول | آکسون‌نگار{% endblock %}
+
+{% block content %}
+    <div class="faq6 sp">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 m-auto text-center">
+            <div class="heading6">
+              <span class="span">سؤالات متداول</span>
+              <h2 class="text-anime-style-3">پرسش‌های پرتکرار درباره آکسون‌نگار</h2>
+              <p class="mt-2 text-muted">در این بخش می‌توانید پاسخ بیشتر پرسش‌های کاربران آکسون‌نگار را پیدا کنید.</p>
+            </div>
+            <div class="space40"></div>
+
+            <div class="accordion accordion1" id="accordionExample">
+              {% for faq in faq_list %}
+              <div class="accordion-item {% if forloop.first %}active{% endif %}" data-aos="fade-up" data-aos-duration="{{ 700|add:forloop.counter0|mul:100 }}">
+                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                  <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse{{ forloop.counter }}"
+                          aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                          aria-controls="collapse{{ forloop.counter }}">
+                    {{ faq.question }}
+                  </button>
+                </h2>
+
+                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                     aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    {{ faq.answer|linebreaks }}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
