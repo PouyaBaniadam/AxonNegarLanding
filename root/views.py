@@ -29,6 +29,6 @@ class FAQList(ListView):
 class WeblogList(TemplateView):
     template_name = "root/weblog_list.html"
 
-#
-# class WeblogDetail(DetailView):
-#     model = Weblog
+
+class WeblogDetail(TemplateView):
+    template_name = "root/weblog_detail.html"
