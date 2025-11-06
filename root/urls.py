@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.Home.as_view(), name='root'),
     path('faqs', views.FAQList.as_view(), name='faq-list'),
     path('weblogs', views.WeblogList.as_view(), name='weblog-list'),
-    path('weblog', views.WeblogDetail.as_view(), name='weblog-detail'),
+    path('weblog/<slug:slug>', views.WeblogDetail.as_view(), name='weblog-detail'),
 ]
