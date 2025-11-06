@@ -61,3 +61,7 @@ class ContactUs(FormView):
     def form_invalid(self, form):
         messages.error(self.request, 'لطفاً خطاهای فرم را برطرف کرده و دوباره تلاش کنید.')
         return super().form_invalid(form)
+
+
+class Download(TemplateView):
+    template_name = "root/download.html"

@@ -11,4 +11,5 @@ urlpatterns = [
     path('weblog/<str:slug>', views.WeblogDetail.as_view(), name='weblog-detail'),
     path('about-axonnegar', views.AboutUs.as_view(), name='about-axonnegar'),
     path('contact-us', views.ContactUs.as_view(), name='contact-us'),
+    path('downloads', views.Download.as_view(), name='download'),
 ]
