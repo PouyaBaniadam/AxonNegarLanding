@@ -42,7 +42,7 @@
   </div>
   <!--===== HERO AREA END =======-->
 
-  <!--===== BLOG AREA START =======-->
+ <!--===== BLOG AREA START =======-->
   <div class="blog-area-all" style="padding-top: 40px;">
     <div class="container">
       <div class="row">
@@ -53,7 +53,7 @@
                 <div class="all-boxs">
                   <div class="row">
                     <!--===== For loop =======-->
-                      {% for weblog in weblog_list %}
+                      {% for weblog in page_obj %}
                         <div class="col-lg-6">
                           <div class="blog-box">
                             <div class="image">
@@ -63,7 +63,7 @@
                               <div class="tags">
                                 <a href="#">
                                   <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
-                                  {{ weblog.created }}
+                                  {{ weblog.created|date:"Y-m-d" }}
                                 </a>
                                 <a href="#">
                                   <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>
@@ -97,21 +97,45 @@
         </div>
       </div>
       <div class="space30"></div>
-      <div class="row">
-        <div class="col-12 m-auto">
-          <div class="theme-pagination text-center">
-            <ul>
-              <li><a href="#"><i class="fa-solid fa-angles-right"></i></a></li>
-              <li><a class="active" href="#">01</a></li>
-              <li><a href="#">02</a></li>
-              <li>...</li>
-              <li><a href="#">۱۲</a></li>
-              <li><a href="#"><i class="fa-solid fa-angles-left"></i></a></li>
-            </ul>
-          </div>
-            <div class="space30"></div>
+
+    <div class="row">
+
+<!--===== Pagination starts =======-->
+      <div class="col-12 m-auto">
+        <div class="theme-pagination text-center">
+          {% if page_obj.has_other_pages %}
+          <ul>
+            {% if page_obj.has_previous %}
+              <li><a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-angle-right"></i></a></li>
+            {% else %}
+              <li class="disabled"><span><i class="fa-solid fa-angle-right"></i></span></li>
+            {% endif %}
+
+            {% for page_number in paginator.get_elided_page_range %}
+              {% if page_number == paginator.ELLIPSIS %}
+                <li><span class="ellipsis">...</span></li>
+              {% else %}
+                {% if page_obj.number == page_number %}
+                  <li><a class="active" href="?page={{ page_number }}">{{ page_number }}</a></li>
+                {% else %}
+                  <li><a href="?page={{ page_number }}">{{ page_number }}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+              <li><a href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-angle-left"></i></a></li>
+            {% else %}
+              <li class="disabled"><span><i class="fa-solid fa-angle-left"></i></span></li>
+            {% endif %}
+          </ul>
+          {% endif %}
         </div>
+        <div class="space30"></div>
       </div>
+      <!--===== Pagination ends =======-->
+
+    </div>
     </div>
   </div>
   <!--===== BLOG AREA END =======-->

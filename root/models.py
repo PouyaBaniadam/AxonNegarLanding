@@ -59,8 +59,8 @@ class Weblog(models.Model):
     title = models.CharField('Title', max_length=200)
     slug = models.SlugField(unique=True, max_length=200, allow_unicode=True)
     what_you_read = models.TextField(verbose_name="What you read")
-    cover_image = models.ImageField(upload_to='covers/', blank=True, null=True)
-    main_image = models.ImageField(upload_to='images/', blank=True, null=True)
+    cover_image = models.ImageField(upload_to='covers/', help_text="570x300")
+    main_image = models.ImageField(upload_to='images/', help_text="620x300")
     text = CKEditor5Field('Text', config_name='extends')
     created = models.DateTimeField(auto_now_add=True)
 

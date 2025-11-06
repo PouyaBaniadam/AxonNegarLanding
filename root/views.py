@@ -30,6 +30,7 @@ class FAQList(ListView):
 
 class WeblogList(ListView):
     model = Weblog
+    paginate_by = 8
 
 
 class WeblogDetail(DetailView):
@@ -37,7 +38,7 @@ class WeblogDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["related_weblogs"] = Weblog.objects.all()
+        context["related_weblogs"] = Weblog.objects.exclude(id=self.object.id)
 
         return context
 
