@@ -53,39 +53,41 @@
                 <div class="all-boxs">
                   <div class="row">
                     <!--===== For loop =======-->
-                    <div class="col-lg-6">
-                      <div class="blog-box">
-                        <div class="image">
-                          <img alt="" src="{% static 'img/blog/blog2-img1.png' %}"/>
-                        </div>
-                        <div class="headding">
-                          <div class="tags">
-                            <a href="#">
-                              <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
-                              ۱۰ خرداد 1404
-                            </a>
-                            <a href="#">
-                              <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>
-                              خاخام محمود
-                            </a>
+                      {% for weblog in weblog_list %}
+                        <div class="col-lg-6">
+                          <div class="blog-box">
+                            <div class="image">
+                              <img alt="" src="{{ weblog.cover_image.url }}"/>
+                            </div>
+                            <div class="headding">
+                              <div class="tags">
+                                <a href="#">
+                                  <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
+                                  {{ weblog.created }}
+                                </a>
+                                <a href="#">
+                                  <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>
+                                  {{ weblog.author.full_name }}
+                                </a>
+                              </div>
+                              <h4>
+                                <a href="{% url 'root:weblog-detail' weblog.slug %}">
+                                    {{ weblog.title }}
+                                </a>
+                              </h4>
+                              <p>
+                                {{ weblog.what_you_read }}
+                              </p>
+                              <a class="learn" href="{% url 'root:weblog-detail' weblog.slug %}">
+                                ادامه مطلب
+                                <span>
+                                  <i class="fa-regular fa-arrow-left"></i>
+                                </span>
+                              </a>
+                            </div>
                           </div>
-                          <h4>
-                            <a href="{% url 'root:weblog-detail' 'test' %}">
-                              راهنمای جامع کمپین ایمیلی
-                            </a>
-                          </h4>
-                          <p>
-                            به راحتی ایمیل‌های خیره‌کننده طراحی کنید، گردش کار بازاریابی خود را خودکار کنید و مخاطبان خود را با دقت و حداکثر هدف قرار دهید.
-                          </p>
-                          <a class="learn" href="{% url 'root:weblog-detail' 'test' %}">
-                            ادامه مطلب
-                            <span>
-                              <i class="fa-regular fa-arrow-left"></i>
-                            </span>
-                          </a>
                         </div>
-                      </div>
-                    </div>
+                      {% endfor %}
                     <!--===== For loop =======-->
                   </div>
                 </div>

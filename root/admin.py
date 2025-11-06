@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from root.models import UseCase, Feature, FAQ
+from root.models import UseCase, Feature, FAQ, Author, Weblog
 
 
 @admin.register(UseCase)
@@ -21,3 +21,13 @@ class FAQAdmin(admin.ModelAdmin):
     list_filter = ('active',)
     search_fields = ('question', 'answer')
     ordering = ('order',)
+
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('user',)
+
+
+@admin.register(Weblog)
+class WeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created')
