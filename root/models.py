@@ -1,4 +1,5 @@
 from django.conf.global_settings import AUTH_USER_MODEL
+from django.core.validators import RegexValidator
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 
@@ -65,3 +66,23 @@ class Weblog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ContactMessage(models.Model):
+    mobile_regex = RegexValidator(
+        regex=r'^09\d{9}$',
+        message="Phone number must be entered in the format: '09xxxxxxxxx'. Up to 11 digits allowed."
+    )
+
+    name = models.CharField("Full Name", max_length=100)
+    email = models.EmailField("Email Address")
+    phone = models.CharField("Phone Number", max_length=20, validators=[mobile_regex])
+    website = models.URLField("Website", blank=True, null=True)
+    message = models.TextField("Message")
+    created_at = models.DateTimeField("Received at", auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Message from {self.name} ({self.email})"

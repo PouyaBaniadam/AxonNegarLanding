@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}ارتباط با ما | آکسون‌نگار{% endblock %}
+
+{% block content %}
+  <!--===== CONTACT PAGE AREA START =======-->
+  <div class="contact-page-area sp">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 m-auto text-center">
+          <div class="common-main-headding">
+            <h1>
+              پشتیبانی آکسون‌نگار
+            </h1>
+            <p>
+              اگر نظری درباره برنامه هوش مصنوعی آکسون‌نگار دارید می‌توانید با ما در میان بگذارید
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space60"></div>
+
+      <div class="contact-form-all">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="form-inputs">
+              <h5>
+                برای ما پیام ارسال کنید
+              </h5>
+              <div class="space16"></div>
+
+              {% if messages %}
+                  {% for message in messages %}
+                      {% with message_class=message.tags|cut:" " %}
+                          <div class="alert
+                                      {% if 'success' in message_class %}alert-success{% endif %}
+                                      {% if 'error' in message_class %}alert-danger{% endif %}
+                                      "
+                               role="alert">
+                              {{ message }}
+                          </div>
+                      {% endwith %}
+                  {% endfor %}
+              {% endif %}
+
+              <form method="post" action="{% url 'root:contact-us' %}">
+                {% csrf_token %}
+                <div class="row">
+
+                  <div class="col-lg-6">
+                    <div class="input">
+                      {{ form.name }}
+                      <div class="error-text">{{ form.name.errors.0 }}</div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input">
+                      {{ form.email }}
+                      <div class="error-text">{{ form.email.errors.0 }}</div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input">
+                      {{ form.phone }}
+                      <div class="error-text">{{ form.phone.errors.0 }}</div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="input">
+                      {{ form.website }}
+                      <div class="error-text">{{ form.website.errors.0 }}</div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                    <div class="input">
+                      {{ form.message }}
+                      <div class="error-text">{{ form.message.errors.0 }}</div>
+                    </div>
+                    <div class="button">
+                      <button class="theme-btn2" type="submit">
+                        ارسال کن
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="contact-page-boxs">
+              <div class="single-box">
+                <div class="icon">
+                  <img alt="Phone Icon" src="{% static 'img/icons/contact-page-icon1.png' %}"/>
+                </div>
+                <div class="headding">
+                  <h5>
+                    تماس بگیرید
+                  </h5>
+                  <a href="tel:09923257693">
+                    ۰۹۹۲۳۲۵۷۶۹۳
+                  </a>
+                </div>
+              </div>
+              <div class="single-box">
+                <div class="icon">
+                  <img alt="Email Icon" src="{% static 'img/icons/contact-page-icon2.png' %}"/>
+                </div>
+                <div class="headding">
+                  <h5>
+                    ایمیل
+                  </h5>
+                  <a href="mailto:info@activatedigitalmedia.com">
+                    info@axonnegar.ir
+                  </a>
+                </div>
+              </div>
+              <div class="single-box">
+                <div class="icon">
+                  <img alt="Clock Icon" src="{% static 'img/icons/contact-page-icon3.png' %}"/>
+                </div>
+                <div class="headding">
+                  <h5>
+                    زمان‌بندی
+                  </h5>
+                  <a>
+                    شنبه - پنجشنبه: ۹ صبح تا ۵ بعد از ظهر
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img alt="Shape" class="shape1" src="{% static 'img/shapes/apps-shape2.png' %}"/>
+    <img alt="Shape" class="shape2" src="{% static 'img/shapes/apps-shape1.png' %}"/>
+    <img alt="Shape" class="shape3" src="{% static 'img/shapes/apps-shape1.png' %}"/>
+  </div>
+  <!--===== CONTACT PAGE AREA END =======-->
+{% endblock %}

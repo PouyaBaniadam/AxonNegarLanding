@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from root.models import UseCase, Feature, FAQ, Author, Weblog
+from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage
 
 
 @admin.register(UseCase)
@@ -29,5 +29,13 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 @admin.register(Weblog)
-class WeAdmin(admin.ModelAdmin):
+class WeblogAdmin(admin.ModelAdmin):
     list_display = ('title', 'created')
+
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone', 'created_at')
+    list_filter = ('created_at',)
+    search_fields = ('name', 'email', 'message')
+    readonly_fields = ('name', 'email', 'phone', 'website', 'message', 'created_at')

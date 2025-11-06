@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DetailView
+from django.contrib import messages
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, ListView, DetailView, FormView
 
+from root.forms import ContactForm
 from root.models import UseCase, Feature, FAQ, Weblog
 
 
@@ -35,10 +37,27 @@ class WeblogDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["weblogs"] = Weblog.objects.all()
+        context["related_weblogs"] = Weblog.objects.all()
 
         return context
 
 
 class AboutUs(TemplateView):
     template_name = "root/about.html"
+
+
+class ContactUs(FormView):
+    template_name = "root/contact.html"
+    form_class = ContactForm
+    success_url = reverse_lazy('root:contact-us')
+
+    def form_valid(self, form):
+        form.save()
+
+        messages.success(self.request, 'پیام شما با موفقیت ارسال شد.')
+
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'لطفاً خطاهای فرم را برطرف کرده و دوباره تلاش کنید.')
+        return super().form_invalid(form)
