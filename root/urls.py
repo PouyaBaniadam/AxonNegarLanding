@@ -9,4 +9,5 @@ urlpatterns = [
     path('faqs', views.FAQList.as_view(), name='faq-list'),
     path('weblogs', views.WeblogList.as_view(), name='weblog-list'),
     path('weblog/<str:slug>', views.WeblogDetail.as_view(), name='weblog-detail'),
+    path('about-axonnegar', views.AboutUs.as_view(), name='about-axonnegar'),
 ]

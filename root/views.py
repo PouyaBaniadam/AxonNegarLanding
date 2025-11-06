@@ -38,3 +38,7 @@ class WeblogDetail(DetailView):
         context["weblogs"] = Weblog.objects.all()
 
         return context
+
+
+class AboutUs(TemplateView):
+    template_name = "root/about.html"
