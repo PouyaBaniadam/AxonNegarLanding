@@ -12,21 +12,23 @@
      <div class="col-lg-7">
       <div class="main-headding">
        <h1>
-        دانلود هوش مصنوعی آکسون‌نگار روی هر دستگاهی
+        دانلود آکسون‌نگار روی هر دستگاهی
        </h1>
        <p>
            روی تلفن همراه شروع کنید
-           <br>
+       </p>
+
+       <p>
            روی وب اپلیکیشن ویرایش کنید
-           <br>
+       </p>
+
+       <p>
            روی دسکتاپ کار را تمام کنید
        </p>
+
        <div class="space30">
        </div>
        <div class="hero-btns">
-        <a class="theme-btn2" href="account.html">
-         تست وب اپلیکیشن
-        </a>
        </div>
       </div>
      </div>
@@ -45,6 +47,7 @@
 
   <!--===== BLOG AREA END =======-->
   <div class="download-blog-area sp _relative">
+
    <div class="container">
     <div class="row">
      <div class="col-lg-6 m-auto text-center">
@@ -76,11 +79,8 @@
         <div class="space10">
         </div>
         <div class="buttons">
-         <a href="#">
-          <img alt="" src="{% static 'img/icons/apps-btn1.png' %}"/>
-         </a>
-         <a href="#">
-          <img alt="" src="{% static 'img/icons/apps-btn2.png' %}"/>
+         <a href="{% url 'root:download-release' os_name='android' %}">
+          <img alt="" src="{% static 'img/icons/android-download.png' %}"/>
          </a>
         </div>
        </div>
@@ -101,11 +101,14 @@
         <div class="space10">
         </div>
         <div class="buttons">
-         <a href="#">
-          <img alt="" src="{% static 'img/icons/apps-btn1.png' %}"/>
+         <a href="{% url 'root:download-release' os_name='windows' %}">
+          <img alt="" src="{% static 'img/icons/windows-download.png' %}"/>
          </a>
-         <a href="#">
-          <img alt="" src="{% static 'img/icons/apps-btn2.png' %}"/>
+         <a href="{% url 'root:download-release' os_name='linux_deb' %}">
+          <img alt="" src="{% static 'img/icons/debian-download.png' %}"/>
+         </a>
+         <a href="{% url 'root:download-release' os_name='linux_rpm' %}">
+          <img alt="" src="{% static 'img/icons/fedora-download.png' %}"/>
          </a>
         </div>
        </div>
@@ -131,10 +134,7 @@
           </div>
           <div class="buttons">
            <a href="#">
-            <img alt="" src="{% static 'img/icons/apps-btn1.png' %}"/>
-           </a>
-           <a href="#">
-            <img alt="" src="{% static 'img/icons/apps-btn2.png' %}"/>
+            <img alt="" src="{% static 'img/icons/web-application-download.png' %}"/>
            </a>
           </div>
          </div>
@@ -144,6 +144,7 @@
      </div>
     </div>
    </div>
+
    <img alt="" class="shape1" src="{% static 'img/shapes/apps-shape1.png' %}"/>
    <img alt="" class="shape2" src="{% static 'img/shapes/apps-shape2.png' %}"/>
   </div>

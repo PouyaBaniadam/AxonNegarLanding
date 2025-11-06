@@ -12,4 +12,5 @@ urlpatterns = [
     path('about-axonnegar', views.AboutUs.as_view(), name='about-axonnegar'),
     path('contact-us', views.ContactUs.as_view(), name='contact-us'),
     path('downloads', views.Download.as_view(), name='download'),
+    path('download/<str:os_name>/', views.DownloadRelease.as_view(), name='download-release'),
 ]

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage
+from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage, Release
 
 
 @admin.register(UseCase)
@@ -39,3 +39,8 @@ class ContactMessageAdmin(admin.ModelAdmin):
     list_filter = ('created_at',)
     search_fields = ('name', 'email', 'message')
     readonly_fields = ('name', 'email', 'phone', 'website', 'message', 'created_at')
+
+
+@admin.register(Release)
+class ReleaseAdmin(admin.ModelAdmin):
+    list_display = ('version',)

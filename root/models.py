@@ -86,3 +86,32 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name} ({self.email})"
+
+
+def get_upload_path(instance, filename):
+    return f'releases/{instance.os}/{filename}'
+
+class Release(models.Model):
+    class OperatingSystem(models.TextChoices):
+        WINDOWS = 'windows', 'Windows'
+        MACOS = 'macos', 'macOS'
+        LINUX_DEB = 'linux_deb', 'Linux (Debian/Ubuntu)'
+        LINUX_RPM = 'linux_rpm', 'Linux (Fedora/Red Hat)'
+        ANDROID = 'android', 'Android'
+
+    version = models.CharField(max_length=20, help_text="e.g., v1.0.1")
+    os = models.CharField(
+        max_length=20,
+        choices=OperatingSystem.choices,
+        help_text="The target operating system for this file."
+    )
+    notes = models.TextField(blank=True, help_text="Release notes or a short description.")
+    release_file = models.FileField(upload_to=get_upload_path)
+    upload_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('version', 'os')
+        get_latest_by = 'upload_date'
+
+    def __str__(self):
+        return f"Release {self.version} for {self.get_os_display()}"

@@ -1,9 +1,11 @@
 from django.contrib import messages
+from django.http import Http404, FileResponse
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 
 from root.forms import ContactForm
-from root.models import UseCase, Feature, FAQ, Weblog
+from root.models import UseCase, Feature, FAQ, Weblog, Release
 
 
 # Create your views here.
@@ -66,3 +68,15 @@ class ContactUs(FormView):
 
 class Download(TemplateView):
     template_name = "root/download.html"
+
+
+class DownloadRelease(View):
+    def get(self, request, *args, **kwargs):
+        os_name = self.kwargs.get('os_name')
+
+        latest_release = Release.objects.filter(os=os_name).latest()
+
+        file_to_serve = latest_release.release_file
+
+        response = FileResponse(file_to_serve, as_attachment=True)
+        return response
