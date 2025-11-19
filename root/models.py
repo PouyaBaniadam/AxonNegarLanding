@@ -4,6 +4,7 @@ from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 
 from AxonNegarLanding import settings
+from root.upload_path_utilities import get_upload_path
 
 
 class UseCase(models.Model):
@@ -87,9 +88,6 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f"Message from {self.name} ({self.email})"
 
-
-def get_upload_path(instance, filename):
-    return f'releases/{instance.os}/{filename}'
 
 class Release(models.Model):
     class OperatingSystem(models.TextChoices):

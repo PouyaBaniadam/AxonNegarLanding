@@ -33,9 +33,9 @@ class ContactForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'نام*'}),
             'email': forms.EmailInput(attrs={'placeholder': 'ایمیل*'}),
-            'phone': forms.TextInput(attrs={'placeholder': 'تلفن*', 'type': 'tel', 'dir': 'ltr'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'تلفن*', 'type': 'tel', 'dir': 'rtl'}),
             'website': forms.URLInput(attrs={'placeholder': 'وب‌سایت'}),
-            'message': forms.Textarea(attrs={'placeholder': 'پیام شما*', 'rows': 3}),
+            'message': forms.Textarea(attrs={'placeholder': 'پیام شما*', 'rows': 4}),
         }
 
         error_messages = {

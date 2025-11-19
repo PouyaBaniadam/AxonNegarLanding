@@ -3,63 +3,10 @@
   <div class="footer6 _relative">
    <div class="container bg">
     <div class="row">
-     <div class="col-lg-5">
-      <div class="subscribe-area">
-       <h5>
-        در خبرنامه ما مشترک شوید
-       </h5>
-       <p>
-        ای‌سافت از هر نظر فراتر از انتظارات ما عمل کرده است. سهولت استفاده و کدام موتور جستجو
-       </p>
-       <div class="input-area">
-        <input placeholder="آدرس ایمیل" type="email"/>
-        <div class="button">
-         <button class="theme-btn9">
-          <span class="tb8">
-           همین حالا شروع کنید
-           <span class="arrow">
-            <i class="fa-solid fa-arrow-left">
-            </i>
-           </span>
-          </span>
-         </button>
-        </div>
-       </div>
-      </div>
-     </div>
      <div class="col-lg col-md-6 col-6">
-      <div class="single-footer-items">
-       <h3>
-        منابع
-       </h3>
-       <ul class="menu-list">
-        <li>
-         <a href="#">
-          جامعه
-         </a>
-        </li>
-        <li>
-         <a href="#">
-          شرکت‌های وابسته
-         </a>
-        </li>
-        <li>
-         <a href="#">
-          مشارکت‌ها
-         </a>
-        </li>
-        <li>
-         <a href="#">
-          مزایا و امتیازات
-         </a>
-        </li>
-        <li>
-         <a href="#">
-          اسناد API
-         </a>
-        </li>
-       </ul>
-      </div>
+
+         enamad
+
      </div>
      <div class="col-lg col-md-6 col-6">
       <div class="single-footer-items">
@@ -69,20 +16,26 @@
        <ul class="menu-list">
 
         <li>
-         <a href="#">
+         <a href="{% url 'root:download-release' os_name='android' %}">
           اندروید
          </a>
         </li>
 
         <li>
-         <a href="#">
+         <a href="{% url 'root:download-release' os_name='windows' %}">
           ویندوز
          </a>
         </li>
 
         <li>
-         <a href="#">
-          لینوکس
+         <a href="{% url 'root:download-release' os_name='linux_deb' %}">
+          لینوکس (Debian)
+         </a>
+        </li>
+
+       <li>
+         <a href="{% url 'root:download-release' os_name='linux_rpm' %}">
+          لینوکس (RedHat)
          </a>
         </li>
 
@@ -101,30 +54,28 @@
         لینک‌های اجتماعی
        </h3>
        <ul class="social-icons">
+
         <li>
          <a href="#">
-          <i class="fa-brands fa-linkedin-in">
+          <i class="fa-brands fa-github">
           </i>
          </a>
         </li>
+
         <li>
          <a href="#">
-          <i class="fa-brands fa-x-twitter">
+          <i class="fa-brands fa-telegram">
           </i>
          </a>
         </li>
-        <li>
-         <a href="#">
-          <i class="fa-brands fa-youtube">
-          </i>
-         </a>
-        </li>
+
         <li>
          <a href="#">
           <i class="fa-brands fa-instagram">
           </i>
          </a>
         </li>
+
        </ul>
       </div>
      </div>
@@ -143,14 +94,7 @@
       <div class="col-md-7">
        <div class="coppyleft text-left">
         <a href="#">
-         @1404 ای‌سافت
-        </a>
-        <a href="#">امنیت</a>
-        <a href="#">
-         حریم خصوصی شما
-        </a>
-        <a href="#">
-         شرایط و ضوابط
+         آکسون‌نگار - ۱۴۰۴
         </a>
        </div>
       </div>
