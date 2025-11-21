@@ -35,23 +35,22 @@ class WeblogList(ListView):
     paginate_by = 8
 
 
-def search_autocomplete(request):
-    query = request.GET.get('q', '')
-    data = []
+class WeblogAutocompleteView(View):
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get('q', '')
+        data = []
 
-    if query:
-        # Fetch top 5 matching items
-        results = Weblog.objects.filter(title__icontains=query)[:5]
+        if query:
+            results = Weblog.objects.filter(title__icontains=query)[:5]
 
-        for item in results:
-            data.append({
-                'title': item.title,
-                'url': reverse('root:weblog-detail', kwargs={'slug': item.slug}),
-                # Handle cases where image might be missing
-                'image': item.cover_image.url if item.cover_image else None
-            })
+            for item in results:
+                data.append({
+                    'title': item.title,
+                    'url': reverse('root:weblog-detail', kwargs={'slug': item.slug}),
+                    'image': item.cover_image.url if item.cover_image else None
+                })
 
-    return JsonResponse({'results': data})
+        return JsonResponse({'results': data})
 
 
 class WeblogDetail(DetailView):
