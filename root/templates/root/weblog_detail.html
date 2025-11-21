@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block content %}
 
@@ -34,14 +35,16 @@
          </div>
         </div>
         <div class="tag">
-         <a href="#">
-          #ایمیل مارکتینگ
+        {% for tag in weblog.tags.all %}
+           <a href="">
+             #{{ tag }}
          </a>
+        {% endfor %}
         </div>
         <div class="date">
          <a href="#">
           <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
-          {{ weblog.created }}
+          {{ weblog.created|jalali_human }}
          </a>
         </div>
        </div>
@@ -167,7 +170,7 @@
             <div class="tags">
              <a href="#">
               <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
-              {{ weblog.created }}
+              {{ weblog.created|jalali_human }}
              </a>
              <a href="#">
               <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>

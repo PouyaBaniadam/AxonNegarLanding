@@ -1,6 +1,6 @@
 from django.contrib import messages
-from django.http import Http404, FileResponse
-from django.urls import reverse_lazy
+from django.http import Http404, FileResponse, JsonResponse
+from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 
@@ -33,6 +33,25 @@ class FAQList(ListView):
 class WeblogList(ListView):
     model = Weblog
     paginate_by = 8
+
+
+def search_autocomplete(request):
+    query = request.GET.get('q', '')
+    data = []
+
+    if query:
+        # Fetch top 5 matching items
+        results = Weblog.objects.filter(title__icontains=query)[:5]
+
+        for item in results:
+            data.append({
+                'title': item.title,
+                'url': reverse('root:weblog-detail', kwargs={'slug': item.slug}),
+                # Handle cases where image might be missing
+                'image': item.cover_image.url if item.cover_image else None
+            })
+
+    return JsonResponse({'results': data})
 
 
 class WeblogDetail(DetailView):

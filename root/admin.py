@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage, Release
+from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage, Release, Tag
 
 
 @admin.register(UseCase)
@@ -26,6 +26,11 @@ class FAQAdmin(admin.ModelAdmin):
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('user',)
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
 
 @admin.register(Weblog)

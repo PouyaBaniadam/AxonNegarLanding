@@ -13,4 +13,5 @@ urlpatterns = [
     path('contact-us', views.ContactUs.as_view(), name='contact-us'),
     path('downloads', views.Download.as_view(), name='downloads'),
     path('download/<str:os_name>/', views.DownloadRelease.as_view(), name='download-release'),
+    path('api/search/', views.search_autocomplete, name='search-autocomplete'),
 ]

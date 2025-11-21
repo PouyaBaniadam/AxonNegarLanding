@@ -55,10 +55,18 @@ class Author(models.Model):
         return self.user.username
 
 
+class Tag(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Weblog(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     title = models.CharField('Title', max_length=200)
     slug = models.SlugField(unique=True, max_length=200, allow_unicode=True)
+    tags = models.ManyToManyField(Tag)
     what_you_read = models.TextField(verbose_name="What you read")
     cover_image = models.ImageField(upload_to='covers/', help_text="570x300")
     main_image = models.ImageField(upload_to='images/', help_text="620x300")

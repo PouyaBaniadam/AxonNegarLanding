@@ -1,9 +1,94 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block title %}وبلاگ | آکسون‌نگار{% endblock %}
 
 {% block content %}
+
+<!-- ================= CUSTOM CSS ================= -->
+<style>
+  /* 1. SEARCH BAR STYLING (GREY COLOR) */
+  .search-area .input input {
+      background-color: #f2f4f8 !important; /* Light Grey Background */
+      border: 1px solid #e1e4e8;
+      color: #333;
+      transition: all 0.3s ease;
+  }
+
+  /* Darker border on focus */
+  .search-area .input input:focus {
+      background-color: #ffffff !important;
+      border-color: #4e95ff; /* Highlight color (change as needed) */
+      box-shadow: 0 0 0 3px rgba(78, 149, 255, 0.1);
+  }
+
+  .search-area {
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* 2. DROPDOWN RESULTS BOX */
+  .ajax-search-results {
+    position: absolute;
+    top: 115%; /* Pushed slightly down */
+    right: 0;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    display: none; /* Hidden by default */
+    border: 1px solid #f0f0f0;
+    padding: 5px 0;
+    z-index: 9999;
+  }
+
+  /* Individual Result Items */
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f9f9f9;
+    transition: background 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+
+  /* Hover Effect */
+  .search-result-item:hover {
+    background-color: #f7f9fc;
+  }
+
+  /* Thumbnail Image */
+  .search-result-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: 12px; /* RTL Spacing */
+    border: 1px solid #eee;
+  }
+
+  /* Text Styling */
+  .search-result-item span {
+    font-size: 14px;
+    color: #222;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  /* "No Results" Message */
+  .no-result-msg {
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+  }
+</style>
 
   <!--===== HERO AREA START =======-->
   <div class="pages-hero">
@@ -21,16 +106,31 @@
           </div>
         </div>
         <div class="col-lg-1"></div>
+
+        <!-- ===== SEARCH COLUMN ===== -->
         <div class="col-lg-5">
-          <form action="#">
+          <!-- onsubmit="return false" prevents page reload on Enter key -->
+          <form onsubmit="return false;">
             <div class="search-area">
               <div class="input">
-                <input placeholder="جستجوی مقالات..." type="text">
+                <input
+                    id="ajax-search-input"
+                    type="text"
+                    placeholder="جستجوی مقالات..."
+                    autocomplete="off"
+                >
               </div>
               <div class="button">
-                <button type="submit">
+                <!-- Removed type="submit" to rely purely on typing,
+                     or you can keep it but prevent default behavior in JS -->
+                <button type="button">
                   <i class="fa-regular fa-magnifying-glass"></i>
                 </button>
+              </div>
+
+              <!-- CONTAINER FOR DROPDOWN RESULTS -->
+              <div id="search-results-box" class="ajax-search-results">
+                  <!-- Results will appear here -->
               </div>
             </div>
           </form>
@@ -61,11 +161,11 @@
                             </div>
                             <div class="headding">
                               <div class="tags">
-                                <a href="#">
+                                <a>
                                   <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
-                                  {{ weblog.created|date:"Y-m-d" }}
+                                  {{ weblog.created|jalali_human }}
                                 </a>
-                                <a href="#">
+                                <a>
                                   <img alt="" src="{% static 'img/icons/blog2-icon2.png' %}"/>
                                   {{ weblog.author.full_name }}
                                 </a>
@@ -141,5 +241,82 @@
   <!--===== BLOG AREA END =======-->
 
   {% include 'includes/cta.html' %}
+
+
+<!-- ================= JAVASCRIPT AJAX LOGIC ================= -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.getElementById('ajax-search-input');
+        const resultsBox = document.getElementById('search-results-box');
+        let typingTimer;
+
+        // --- Make sure you have created the URL in urls.py and the View in views.py ---
+        const searchUrl = "{% url 'root:search-autocomplete' %}";
+
+        searchInput.addEventListener('keyup', function() {
+            const query = this.value.trim();
+
+            // Debounce: Clear timer so we don't fire request while typing
+            clearTimeout(typingTimer);
+
+            if (query.length < 2) {
+                resultsBox.style.display = 'none';
+                resultsBox.innerHTML = '';
+                return;
+            }
+
+            // Wait 300ms after typing stops to perform search
+            typingTimer = setTimeout(() => {
+                fetchResults(query);
+            }, 300);
+        });
+
+        function fetchResults(query) {
+            fetch(`${searchUrl}?q=${query}`)
+            .then(response => response.json())
+            .then(data => {
+                resultsBox.innerHTML = ''; // Clear old
+
+                if (data.results.length > 0) {
+                    // Create Items
+                    data.results.forEach(item => {
+                        // Check if image exists (handle fallback if None)
+                        let imgHtml = '';
+                        if (item.image) {
+                            imgHtml = `<img src="${item.image}" alt="cover">`;
+                        } else {
+                            // Placeholder icon if no image
+                            imgHtml = `<img src="{% static 'img/icons/blog2-icon1.png' %}" alt="cover" style="opacity:0.5;">`;
+                        }
+
+                        const htmlItem = `
+                            <a href="${item.url}" class="search-result-item">
+                                ${imgHtml}
+                                <span>${item.title}</span>
+                            </a>
+                        `;
+                        resultsBox.innerHTML += htmlItem;
+                    });
+                } else {
+                    // No Data Found
+                    resultsBox.innerHTML = '<div class="no-result-msg">نتیجه‌ای یافت نشد</div>';
+                }
+
+                // Show Box
+                resultsBox.style.display = 'block';
+            })
+            .catch(err => {
+                console.error('Search Error:', err);
+            });
+        }
+
+        // Close Dropdown on Click Outside
+        document.addEventListener('click', function(event) {
+            if (!searchInput.contains(event.target) && !resultsBox.contains(event.target)) {
+                resultsBox.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 {% endblock %}
