@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.http import Http404, FileResponse, JsonResponse
+from django.http import FileResponse, JsonResponse
 from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, FormView
@@ -8,7 +8,6 @@ from root.forms import ContactForm
 from root.models import UseCase, Feature, FAQ, Weblog, Release
 
 
-# Create your views here.
 class Home(TemplateView):
     template_name = "root/index.html"
 

@@ -42,7 +42,7 @@
         {% endfor %}
         </div>
         <div class="date">
-         <a href="#">
+         <a>
           <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
           {{ weblog.created|jalali_human }}
          </a>
@@ -98,39 +98,45 @@
        </article>
 
 
-       <div class="social-area-all">
-        <div class="social-icons">
-         <ul>
-          <li class="text">
-           اشتراک گذاری:
-          </li>
-          <li>
-           <a href="#">
-            <i class="fa-brands fa-facebook-f">
-            </i>
-           </a>
-          </li>
-          <li>
-           <a href="#">
-            <i class="fa-brands fa-google-plus-g">
-            </i>
-           </a>
-          </li>
-          <li>
-           <a href="#">
-            <i class="fa-brands fa-linkedin-in">
-            </i>
-           </a>
-          </li>
-          <li>
-           <a href="#">
-            <i class="fa-brands fa-youtube">
-            </i>
-           </a>
-          </li>
-         </ul>
+        <div class="social-area-all">
+          <div class="social-icons">
+            <ul>
+                <li class="text">
+                    اشتراک گذاری:
+                </li>
+
+                <!-- Telegram -->
+                <li>
+                    <!-- Text: "This post is amazing, I suggest you read it:" -->
+                    <a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{ 'این پست فوق‌العاده‌ست، پیشنهاد می‌کنم حتما بخونیش:'|urlencode }} {{ object.title|urlencode }}" target="_blank" title="اشتراک در تلگرام">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </li>
+
+                <!-- WhatsApp -->
+                <li>
+                    <a href="https://api.whatsapp.com/send?text={{ 'این پست فوق‌العاده‌ست، پیشنهاد می‌کنم حتما بخونیش:'|urlencode }} {{ request.build_absolute_uri }}" target="_blank" title="اشتراک در واتس‌اپ">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </li>
+
+                <!-- X (Twitter) -->
+                <li>
+                    <a href="https://x.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ 'این پست فوق‌العاده‌ست، پیشنهاد می‌کنم حتما بخونیش:'|urlencode }}" target="_blank" title="اشتراک در توییتر">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+
+                <!-- LinkedIn -->
+                <!-- LinkedIn does not allow custom text in the sharing URL -->
+                <li>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri }}" target="_blank" title="اشتراک در لینکدین">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
         </div>
-       </div>
        </div>
       </div>
      </div>
@@ -168,7 +174,7 @@
            </div>
            <div class="headding">
             <div class="tags">
-             <a href="#">
+             <a>
               <img alt="" src="{% static 'img/icons/blog2-icon1.png' %}"/>
               {{ weblog.created|jalali_human }}
              </a>
