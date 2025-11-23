@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-&&&ko8i#$pcn^0^%s^18g5l=h)ii8n62gph*8k&hlkulpzy7&i')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['axonnegar.ir', 'www.axonnegar.ir', 'axonnegar.runflare.run', '127.0.0.1', 'localhost']
 
