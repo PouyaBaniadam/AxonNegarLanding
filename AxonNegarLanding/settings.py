@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&&&ko8i#$pcn^0^%s^18g5l=h)ii8n62gph*8k&hlkulpzy7&i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['axonnegar.ir', 'axonnegar.runflare.run']
 
 
 # Application definition
