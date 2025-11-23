@@ -5,6 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-&&&ko8i#$pcn^0^%s^18g5l=h)ii8n62gph*8k&hlkulpzy7&i')
 
+# DEBUG is True for testing media serving
 DEBUG = True
 
 ALLOWED_HOSTS = ['axonnegar.ir', 'www.axonnegar.ir', 'axonnegar.runflare.run', '127.0.0.1', 'localhost']
@@ -28,7 +29,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # Whitenoise REMOVED
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -56,6 +57,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'AxonNegarLanding.wsgi.application'
 
+# Database in the mounted volume (/app/data/db.sqlite3)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -86,22 +88,15 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'assets/'
+# Static files (CSS/JS)
+STATIC_URL = '/assets/'  # Added leading slash for safety
 STATICFILES_DIRS = [BASE_DIR / "assets"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-WHITENOISE_MANIFEST_STRICT = False
 
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-
+# Media files (Images/Uploads)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/app/data/media'
+# This points to /app/data/media (Inside your Runflare Volume)
+MEDIA_ROOT = BASE_DIR / 'data/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
