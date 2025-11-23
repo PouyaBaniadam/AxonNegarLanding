@@ -5,9 +5,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-&&&ko8i#$pcn^0^%s^18g5l=h)ii8n62gph*8k&hlkulpzy7&i')
 
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = False
 
 ALLOWED_HOSTS = ['axonnegar.ir', 'www.axonnegar.ir', 'axonnegar.runflare.run', '127.0.0.1', 'localhost']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://axonnegar.ir',
+    'https://www.axonnegar.ir',
+    'https://axonnegar.runflare.run'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -53,7 +59,7 @@ WSGI_APPLICATION = 'AxonNegarLanding.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'database/db.sqlite3',
+        'NAME': BASE_DIR / 'data/db.sqlite3',
     }
 }
 
