@@ -86,7 +86,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'assets/'
+STATIC_URL = '/assets/'
 STATICFILES_DIRS = [BASE_DIR / "assets"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 WHITENOISE_MANIFEST_STRICT = False
@@ -100,8 +100,14 @@ STORAGES = {
     },
 }
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'data/media'
+# --- MEDIA FILES (Updated for Runflare Public Disk) ---
+
+# 1. The URL the browser uses (Matches the link support sent you)
+MEDIA_URL = '/public/media/'
+
+# 2. The physical folder on the server where files are saved
+# Runflare mounted a new disk at /app/public
+MEDIA_ROOT = '/app/public/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
