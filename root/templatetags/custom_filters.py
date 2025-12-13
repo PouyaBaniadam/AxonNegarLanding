@@ -29,7 +29,6 @@ def jalali_human(value):
     if not value:
         return ""
 
-    # 1. Ensure timezone awareness
     if timezone.is_naive(value):
         value = timezone.make_aware(value, timezone.get_current_timezone())
 
@@ -41,7 +40,6 @@ def jalali_human(value):
     hours = int(minutes // 60)
     days = diff.days
 
-    # 2. Logic for "Time Ago"
     if seconds < 60:
         return "لحظاتی پیش"
 
@@ -66,3 +64,7 @@ def jalali_human(value):
     full_date_str = f"{j_date.day} {month_name} {j_date.year}"
 
     return to_persian_numbers(full_date_str)
+
+@register.filter(name='number_comma_separator')
+def number_comma_separator(value):
+    return f"{value:,}"

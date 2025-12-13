@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage, Release, Tag
+from root.models import UseCase, Feature, FAQ, Author, Weblog, ContactMessage, Release, Tag, PremiumPlan, \
+    PremiumPlanBenefit
 
 
 @admin.register(UseCase)
@@ -49,3 +50,12 @@ class ContactMessageAdmin(admin.ModelAdmin):
 @admin.register(Release)
 class ReleaseAdmin(admin.ModelAdmin):
     list_display = ('version',)
+
+
+@admin.register(PremiumPlanBenefit)
+class PremiumPlanBenefitAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+@admin.register(PremiumPlan)
+class PremiumPlanAdmin(admin.ModelAdmin):
+    list_display = ('plan_name', 'price')

@@ -14,4 +14,5 @@ urlpatterns = [
     path('downloads', views.Download.as_view(), name='downloads'),
     path('download/<str:os_name>/', views.DownloadRelease.as_view(), name='download-release'),
     path('api/search/', views.WeblogAutocompleteView.as_view(), name='search-autocomplete'),
+    path('plans', views.PremiumPlans.as_view(), name='plans'),
 ]

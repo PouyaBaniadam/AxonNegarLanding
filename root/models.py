@@ -121,3 +121,30 @@ class Release(models.Model):
 
     def __str__(self):
         return f"Release {self.version} for {self.get_os_display()}"
+
+
+class PremiumPlanBenefit(models.Model):
+    title = models.CharField(max_length=50)
+    icon = models.ImageField(upload_to='icons', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class PremiumPlan(models.Model):
+    plan_name = models.CharField(max_length=100)
+    benefits = models.ManyToManyField(PremiumPlanBenefit)
+    is_special = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    price = models.PositiveIntegerField(default=0)
+    discount_precent = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.plan_name
+
+    @property
+    def payable_price(self):
+        if self.discount_precent > 0:
+            discount_amount = (self.price * self.discount_precent) / 100
+            return int(self.price - discount_amount)
+        return self.price

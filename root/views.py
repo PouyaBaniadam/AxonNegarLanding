@@ -5,7 +5,7 @@ from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 
 from root.forms import ContactForm
-from root.models import UseCase, Feature, FAQ, Weblog, Release
+from root.models import UseCase, Feature, FAQ, Weblog, Release, PremiumPlan
 
 
 class Home(TemplateView):
@@ -97,3 +97,12 @@ class DownloadRelease(View):
 
         response = FileResponse(file_to_serve, as_attachment=True)
         return response
+
+
+class PremiumPlans(TemplateView):
+    template_name = "root/plans.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['plans'] = PremiumPlan.objects.filter(is_active=True).order_by('price')
+        return context
