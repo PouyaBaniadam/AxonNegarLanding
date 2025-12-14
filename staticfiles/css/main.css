@@ -6544,7 +6544,7 @@ li.has-dropdown1 span {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   border-bottom: 1px solid rgba(255, 255, 255, 0.452);
-  background-image: url(../img/bg/hero6-bg.png);
+  background-image: url(../img/bg/hero6-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -10380,7 +10380,7 @@ body.body2 {
   right: 0;
   height: 100%;
   width: 100%;
-  background-image: url(../img/bg/hero6-bg.png);
+  background-image: url(../img/bg/hero6-bg.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
