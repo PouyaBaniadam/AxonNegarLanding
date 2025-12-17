@@ -17,4 +17,5 @@ urlpatterns = [
     path('api/search/', views.WeblogAutocompleteView.as_view(), name='search-autocomplete'),
     path('plans', views.PremiumPlans.as_view(), name='plans'),
     path('payment-bridge', TemplateView.as_view(template_name='root/payment_bridge.html'), name='payment-bridge'),
+    path('payment-start', TemplateView.as_view(template_name='payment_start.html'), name='payment-start'),
 ]

@@ -1,0 +1,35 @@
+<!-- templates/payment_start.html -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>در حال اتصال به درگاه بانک...</title>
+    <style>
+        body { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; font-family: tahoma; background: #f9f9f9; }
+        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #e67e22; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin-bottom: 20px;}
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <h3>در حال انتقال به درگاه پرداخت...</h3>
+    <p>لطفاً شکیبا باشید.</p>
+
+    <script>
+        // گرفتن id_get از پارامترهای آدرس
+        const urlParams = new URLSearchParams(window.location.search);
+        const id_get = urlParams.get('id_get');
+
+        if (id_get) {
+            // ساخت لینک نهایی بیت‌پی
+            const targetUrl = "https://bitpay.ir/payment/gateway-" + id_get;
+
+            // ریدایرکت کردن کاربر به بیت‌پی
+            // چون این عمل از دامنه axonnegar.ir انجام می‌شود، هدر Referrer درست تنظیم می‌شود
+            window.location.replace(targetUrl);
+        } else {
+            document.body.innerHTML = "<h3 style='color:red; text-align:center;'>خطا: شناسه پرداخت یافت نشد.</h3>";
+        }
+    </script>
+</body>
+</html>
