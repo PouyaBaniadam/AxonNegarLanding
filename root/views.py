@@ -113,3 +113,6 @@ class PremiumPlans(TemplateView):
 @method_decorator(csrf_exempt, name='dispatch')
 class PaymentBridgeView(TemplateView):
     template_name = 'root/payment_bridge.html'
+
+    def post(self, request, *args, **kwargs):
+        return self.get(request, *args, **kwargs)
