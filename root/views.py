@@ -1,7 +1,9 @@
 from django.contrib import messages
 from django.http import FileResponse, JsonResponse
 from django.urls import reverse_lazy, reverse
+from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 
 from root.forms import ContactForm
@@ -106,3 +108,8 @@ class PremiumPlans(TemplateView):
         context = super().get_context_data(**kwargs)
         context['plans'] = PremiumPlan.objects.filter(is_active=True).order_by('price')
         return context
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class PaymentBridgeView(TemplateView):
+    template_name = 'root/payment_bridge.html'
