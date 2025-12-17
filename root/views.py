@@ -115,4 +115,11 @@ class PaymentBridgeView(TemplateView):
     template_name = 'root/payment_bridge.html'
 
     def post(self, request, *args, **kwargs):
-        return self.get(request, *args, **kwargs)
+        trans_id = request.POST.get('trans_id')
+        id_get = request.POST.get('id_get')
+
+        context = {
+            'trans_id': trans_id,
+            'id_get': id_get
+        }
+        return self.render_to_response(context)

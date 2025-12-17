@@ -1,3 +1,5 @@
+<!-- templates/payment_bridge.html (در پروژه لندینگ) -->
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -12,18 +14,25 @@
 <body>
     <div style="text-align: center;">
         <div class="loader" style="margin: 0 auto 20px auto;"></div>
-        <p>پرداخت انجام شد. در حال بازگشت به نرم‌افزار...</p>
+        <p>در حال بازگشت به نرم‌افزار...</p>
     </div>
 
     <script>
-        // آدرس دقیق بک‌اند خود را اینجا بگذارید
         const BACKEND_URL = "https://back.axonnegar.ir/payment/verify/bitpay/";
 
-        // دریافت پارامترهای GET که بیت‌پی فرستاده (trans_id و id_get)
-        const queryString = window.location.search;
+        // مقادیر توسط جنگو در اینجا قرار داده می‌شوند
+        const trans_id = "{{ trans_id|default:'' }}";
+        const id_get = "{{ id_get|default:'' }}";
 
-        // انتقال کاربر به بک‌اند به همراه پارامترها
-        window.location.href = BACKEND_URL + queryString;
+        // اگر پارامترها وجود داشتند، URL نهایی را ساخته و ریدایرکت کن
+        if (trans_id && id_get) {
+            const redirectUrl = `${BACKEND_URL}?trans_id=${trans_id}&id_get=${id_get}`;
+            window.location.href = redirectUrl;
+        } else {
+            // اگر به هر دلیلی بیت‌پی پارامترها را نفرستاد، یک پیام خطا نشان بده
+            const errorUrl = `${BACKEND_URL}?error=missing_params_from_gateway`;
+            window.location.href = errorUrl;
+        }
     </script>
 </body>
 </html>
