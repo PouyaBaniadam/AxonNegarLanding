@@ -12,7 +12,8 @@ ALLOWED_HOSTS = ['axonnegar.ir', 'www.axonnegar.ir', 'axonnegar.runflare.run', '
 CSRF_TRUSTED_ORIGINS = [
     'https://axonnegar.ir',
     'https://www.axonnegar.ir',
-    'https://axonnegar.runflare.run'
+    'https://axonnegar.runflare.run',
+    'https://bitpay.ir',
 ]
 
 INSTALLED_APPS = [
